@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HW7.Entities
+{
+    public class User
+    {
+        private static int idSet;
+        public int Id { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public RoleEnum Role { get; set; }
+
+
+        public User(string firstName, string lastName, string email, string password, RoleEnum role)
+        {
+            Id = ++idSet;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Password = password;
+            Role = role;
+        }
+        public User(string email, string password, RoleEnum role) : this(null!, null!, email, password, role)
+        {
+
+        }
+    }
+}
